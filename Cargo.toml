@@ -31,18 +31,18 @@ serde = ["serial2/serde"]
 doc = ["tokio/io-util", "serial2/doc"]
 
 [dependencies]
-serial2 = "0.2.26"
-tokio = { version = "1.32.0", default-features = false, features = ["net"] }
+serial2 = { git = "https://github.com/Znaw/serial2-rs.git", branch = "main" }
+tokio = { version = "1.41.0", default-features = false, features = ["net"] }
 
 [target.'cfg(unix)'.dependencies]
-libc = "0.2.148"
+libc = "0.2.161"
 
 [target.'cfg(windows)'.dependencies]
 winapi = { version = "0.3.9", features = ["winerror"] }
 
 [dev-dependencies]
 tokio = { version = "1.32.0", features = ["macros", "rt", "io-std", "io-util"] }
-serial2 = { version = "0.2.22", features = ["rs4xx"] }
+serial2 = { git = "https://github.com/Znaw/serial2-rs.git", branch = "main", features = ["rs4xx"] }
 
 [package.metadata.docs.rs]
 features = ["doc", "doc-cfg"]
